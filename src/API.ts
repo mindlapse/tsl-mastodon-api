@@ -444,7 +444,7 @@ export class API {
     }
 
     public async deleteNotification (notificationId: string) {
-        const result = await this.fetch( 'POST', `notifications/${notificationId}/dismiss`, {} );
+        const result = await this.fetch( 'POST', `notifications/${notificationId}/dismiss`, { } );
         if (
             result.failed ||
             result.status !== 200

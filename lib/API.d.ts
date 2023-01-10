@@ -159,6 +159,7 @@ export declare class API {
      * Query parameters to limit the amount of statuses to get.
      */
     getNotifications(types?: string[], exclude_types?: string[], account_id?: string, queryParameters?: API.QueryParameters): Promise<API.Success<Array<JSON.Notification>>>;
+    deleteNotification(notificationId: string): Promise<undefined>;
     /**
      * Posts a new list or updates an existing list.
      *

@@ -443,6 +443,18 @@ export class API {
         return result as API.Success<Array<JSON.Notification>>;
     }
 
+    public async deleteNotification (notificationId: string) {
+        const result = await this.fetch( 'POST', `notifications/${notificationId}/dismiss` );
+        if (
+            result.failed ||
+            result.status !== 200
+        ) {
+            result.failed = true;
+            return Promise.reject( result );
+        }
+    }
+
+
     /**
      * Posts a new list or updates an existing list.
      *

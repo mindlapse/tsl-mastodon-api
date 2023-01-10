@@ -447,8 +447,7 @@ export class API {
         const result = await this.fetch( 'POST', `notifications/${notificationId}/dismiss` );
         if (
             result.failed ||
-            result.status !== 200 ||
-            !JSON.isNotifications( result?.json )
+            result.status !== 200
         ) {
             result.failed = true;
             return Promise.reject( result );

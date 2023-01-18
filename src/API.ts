@@ -127,6 +127,17 @@ export class API {
         return result as API.Success<object>;
     }
 
+    public async deleteNotification (notificationId: string) {
+        const result = await this.fetch( 'POST', `notifications/${notificationId}/dismiss` );
+        if (
+            result.failed ||
+            result.status !== 200
+        ) {
+            result.failed = true;
+            return Promise.reject( result );
+        }
+    }
+
     /**
      * Deletes a status.
      *

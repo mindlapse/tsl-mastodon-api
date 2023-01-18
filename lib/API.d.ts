@@ -50,6 +50,7 @@ export declare class API {
      * Promise with an empty object, if successful.
      */
     deleteListAccounts(listID: string, listAccounts: JSON.ListAccountsDelete): Promise<API.Success<object>>;
+    deleteNotification(notificationId: string): Promise<undefined>;
     /**
      * Deletes a status.
      *
